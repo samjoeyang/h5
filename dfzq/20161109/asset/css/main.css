@@ -1,0 +1,2098 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #f6f6f6;
+    text-align: center;
+    overflow-x: hidden;
+}
+html {
+    font-size: 13px;
+}
+body {
+    /*
+    font-family: "PingFang-SC-Regular", sans-serif, Arial;
+    font-family: "FZLT", Arial, sans-serif;
+    */
+    font-family: Arial, sans-serif;
+    color: #fff;
+    /*
+    font-weight: 600;
+    background-color: #fe8c27;
+	background-color: #31b4e4;
+    */
+    background: url(../images/helicopter/bg.png) no-repeat;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+body.second-color {
+    background-color: #fe8c27;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.swiper-container {
+    width: 100vw;
+    height: 100vh;
+    transition: all .8s ease;
+}
+/*
+.swiper-container.switch {
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+}
+*/
+.swiper-container.switch {
+    opacity: 0;
+}
+.page {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#helicopter-page.page {
+    position: relative;
+    background: url(../images/helicopter/bg.png) no-repeat;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+.nav-down {
+    position: absolute;
+    bottom: 2%;
+    left: 44vw;
+    width: 16vw;
+    height: 12vw;
+    z-index: 200;
+    -webkit-transform: scale(0.85, 1);
+    transform: scale(0.85, 1);
+}
+.nav-down .triangle {
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    right: 0;
+    bottom: 0;
+    width: 6vw;
+    height: 6vw;
+    border: 4px solid #fe8c27;
+    border-top: none;
+    border-left: none;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: .7;
+    -webkit-animation: navmove 1.5s linear 0s infinite normal none;
+    animation: navmove 1.5s linear 0s infinite normal none;
+}
+.nav-down .triangle-1 {
+    top: -4vw;
+}
+.nav-down .triangle-2 {
+    top: 0vw;
+}
+.center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.round {
+    border-radius: 50%;
+}
+
+.finger {
+    position: absolute;
+    width: 12vw;
+    height: 20vw;
+    background-size: 12vw;
+    background-image: url(../images/home/finger.gif);
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.finger-1 {
+    left: 50vw;
+    bottom: 4%;
+}
+.finger-2 {
+    left: 44.2vw;
+    bottom: 45.5vw;
+}
+.finger-3 {
+    top: 74vw;
+    left: 44vw;
+}
+.finger-4 {
+    bottom: 34.5vw;
+    left: 40.5vw;
+}
+
+#loading-page {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fe8c27;
+    z-index: 500;
+	background-image: url(../images/home/bg.png);
+	background-repeat:no-repeat;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+.pace-done #loading-page {
+    display: none;
+}
+#loading-page .gear {
+    position: absolute;
+    width: 54vw;
+    height: 54vw;
+    left: 23vw;
+    top: 20%;
+    background-size: 54vw;
+    background-image: url(../images/home/gear.png);
+    background-repeat: no-repeat;
+    z-index: 501;
+}
+#loading-page .txt {
+    position: absolute;
+    z-index: 502;
+    width: 80vw;
+    height: 33%;
+    font-size: 5.5vw;
+    left: 10vw;
+    bottom: 5%;
+    font-weight: 700;
+    padding: 10px;
+    line-height: 1.6;
+    letter-spacing: .2rem;
+}
+
+
+#helicopter {
+    width: 80vw;
+    height: 40vw;
+    transition: bottom 2s ease;
+
+    position: absolute;
+    left: 45vw;
+    right: 0;
+    bottom: 10%;
+    zoom: .6;
+}
+
+.intro {
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 10px;
+    line-height: 1.5;
+    letter-spacing: .15rem;
+    text-shadow: 4px 2px 2px rgba(30, 30, 30, .50);
+}
+.intro.start {
+    -webkit-animation: bouncetxt 3s ease-in-out 0s infinite normal none;
+    animation: bouncetxt 3s ease-in-out 0s infinite normal none;
+}
+
+#helicopter-page > .intro {
+    top: 4%;
+    z-index: 5;
+}
+#music-page > .intro {
+    bottom: 10%;
+}
+#windmill-page .intro {
+    top: -8%;
+}
+#bigwheel-page .intro {
+    top: 0;
+    text-shadow: none;
+}
+
+
+
+#bg-music {
+    display: none;
+}
+
+#play-bg-music {
+    position: fixed;
+    top: 2vw;
+    right: 2vw;
+    width: 8vw;
+    height: 8vw;
+
+    background-size: 8vw;
+    background-image: url(../images/home/music-icon.png);
+    background-repeat: no-repeat;
+    z-index: 100;
+    opacity: .75;
+}
+
+#play-bg-music.playing {
+    -webkit-animation: tailrotate 3s linear 0s infinite normal none;
+    animation: tailrotate 3s linear 0s infinite normal none;
+}
+
+
+
+
+
+#helicopter-page > .ground {
+    position: absolute;
+    bottom: 0px;
+    height: 20%;
+    width: 100vw;
+    left: 0;
+    transition: bottom 2s linear;
+}
+#helicopter-page > .ground.down {
+    bottom: -30%;
+}
+#helicopter-page > .ground.hidden {
+    display: none;
+}
+#helicopter-page > .cloud {
+    position: absolute;
+    top: 39%;
+    width: 25vw;
+    height: 13vw;
+    left: 8vw;
+    z-index: 2;
+}
+#helicopter-page > .cloud.reset {
+    left: 102vw;
+}
+#helicopter-page > .cloud:nth-of-type(1).reset {
+    display: none;
+}
+#helicopter-page > .cloud:nth-of-type(2).reset {
+    left: 33vw;
+    transition: left 30s linear;
+}
+#helicopter-page > .cloud:nth-of-type(3).reset {
+    left: 183vw;
+    top: 40vw;
+}
+#helicopter-page > .cloud.start {
+    /*
+    -webkit-animation: cloudmove1 30s linear 0s infinite normal none;
+    animation: cloudmove1 30s linear 0s infinite normal none;
+    */
+}
+#helicopter-page > .cloud:nth-of-type(2).start {
+    left: -70vw;
+}
+#helicopter-page > .cloud:nth-of-type(3).start {
+    -webkit-animation: cloudmove3 40s linear 0s infinite normal none;
+    animation: cloudmove3 40s linear 0s infinite normal none;
+}
+#helicopter-page > .cloud:nth-of-type(4).start {
+    -webkit-animation: cloudmove4 30s linear 0s infinite normal none;
+    animation: cloudmove4 30s linear 0s infinite normal none;
+}
+#helicopter-page > .cloud:nth-of-type(5).start {
+    -webkit-animation: cloudmove5 50s linear 0s infinite normal none;
+    animation: cloudmove5 50s linear 0s infinite normal none;
+}
+
+#helicopter-page > .cloud:nth-of-type(2).reset.fast {
+    transition: left 15s linear;
+}
+#helicopter-page > .cloud:nth-of-type(3).fast {
+    -webkit-animation: cloudmove3 20s linear 0s infinite normal none;
+    animation: cloudmove3 20s linear 0s infinite normal none;
+}
+#helicopter-page > .cloud:nth-of-type(4).fast {
+    -webkit-animation: cloudmove4 15s linear 0s infinite normal none;
+    animation: cloudmove4 15s linear 0s infinite normal none;
+}
+#helicopter-page > .cloud:nth-of-type(5).fast {
+    -webkit-animation: cloudmove5 25s linear 0s infinite normal none;
+    animation: cloudmove5 25s linear 0s infinite normal none;
+}
+
+
+#helicopter-page > .cloud:nth-of-type(2) {
+    top: 30%;
+    left: 35vw;
+    width: 25vw;
+    height: 12vw;
+    z-index: 1;
+}
+#helicopter-page > .cloud:nth-of-type(3) {
+    top: 18%;
+    width: 25vw;
+    left: 85vw;
+}
+#helicopter-page > .cloud:nth-of-type(4) {
+    top: 45%;
+    width: 25vw;
+    left: 183vw;
+}
+#helicopter-page > .cloud:nth-of-type(5) {
+    top: 60%;
+    width: 25vw;
+    height: 12vw;
+    left: 102vw;
+    z-index: 1;
+}
+
+#helicopter.uping {
+    bottom: 25%;
+}
+/*
+#helicopter.down-before-fly {
+    transition: bottom 0.3s ease;
+    bottom: 23%;
+}
+*/
+#helicopter.fly-away {
+    transition: bottom 0.5s ease;
+    bottom: 105%;
+}
+#helicopter.down {
+    bottom: 35%;
+    transition: bottom 2s ease;
+}
+#helicopter.reset {
+    -webkit-transition: none;
+    transition: none;
+    bottom: -40%;
+}
+#helicopter.fly-back {
+    transition: bottom 1.5s ease;
+    bottom: 20%;
+    -webkit-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+#helicopter.hover {
+    -webkit-animation: bounce 4s ease-in-out 0s infinite normal none;
+    animation: bounce 4s ease-in-out 0s infinite normal none;
+}
+
+#helicopter .main {
+    position: absolute;
+    width: 246px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+#helicopter > .blade {
+    position: absolute;
+    top: -2px;
+    left: 21px;
+    width: 230px;
+    height: 21px;
+    transition: opacity .2s ease;
+
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+}
+#helicopter > .blade.step-1 {
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation: bladestart .8s linear 0s infinite normal none;
+    animation: bladestart .8s linear 0s infinite normal none;
+}
+#helicopter > .blade.step-2 {
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation: bladeslow .6s linear 0s infinite normal none;
+    animation: bladeslow .6s linear 0s infinite normal none;
+}
+#helicopter > .blade.step-3 {
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation: bladeslow .4s linear 0s infinite normal none;
+    animation: bladeslow .4s linear 0s infinite normal none;
+}
+#helicopter > .blade.fast {
+    opacity: 0;
+}
+
+#helicopter > .rotor {
+    width: 320px;
+    height: 320px;
+    border-radius: 160px;
+    position: absolute;
+    top: -160px;
+    left: -24px;
+    overflow: hidden;
+    background-color: rgba( 28, 18, 2, 0.08 );
+
+    -webkit-transform: scale( 1 , 0.075 );
+    -moz-transform: scale( 1 , 0.075 );
+    -ms-transform: scale( 1 , 0.075 );
+    -o-transform: scale( 1 , 0.075 );
+    transform: scale( 1 , 0.075 );
+
+    z-index: 20;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+#helicopter > .rotor.show {
+    opacity: 1;
+
+}
+#helicopter .rotator {
+    width: 320px;
+    height: 320px;
+    border-radius: 160px;
+    position: absolute;
+
+    -webkit-animation: rotorrotate 0.6s linear 0s infinite normal none;
+    animation: rotorrotate 0.6s linear 0s infinite normal none;
+}
+
+#helicopter .rotator > div {
+    width: 320px;
+    height: 40px;
+    /*
+    background: #49525c;
+    opacity: .2;
+    */
+    background-color: rgba( 28, 18, 2, 0.03 );
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -160px;
+    margin-top: -20px;
+}
+
+#helicopter .rotator > div:nth-child(2) {
+    -webkit-transform: rotate( 90deg );
+    transform: rotate( 90deg );
+}
+
+#helicopter .tail {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    /*
+    background-color: rgba( 28, 18, 2, 0.12 );
+    */
+    top:43px;
+    left:-17px;
+    -webkit-transform: rotate(65deg);
+    transform: rotate(65deg);
+    z-index: 6;
+}
+
+#helicopter > .tail.step-1 {
+    background-color: rgba( 28, 18, 2, 0.03 );
+    -webkit-animation: tailrotate .8s linear 0s infinite normal none;
+    animation: tailrotate .8s linear 0s infinite normal none;
+}
+#helicopter > .tail.step-2 {
+    background-color: rgba( 28, 18, 2, 0.04 );
+    -webkit-animation: tailrotate .6s linear 0s infinite normal none;
+    animation: tailrotate .6s linear 0s infinite normal none;
+}
+#helicopter > .tail.step-3 {
+    background-color: rgba( 28, 18, 2, 0.04 );
+    -webkit-animation: tailrotate .5s linear 0s infinite normal none;
+    animation: tailrotate .5s linear 0s infinite normal none;
+}
+
+#helicopter .tail .dot {
+    /*
+    display: block;
+    top: 50%;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -4px;
+    */
+    width: 8px;
+    height: 8px;
+    z-index: 5;
+}
+#helicopter .tail .blade {
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
+    background: #49525c;
+    opacity: .7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    z-index: 4;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+}
+#helicopter .tail .blade:nth-of-type(1) {
+}
+#helicopter .tail .blade:nth-of-type(2) {
+    -webkit-transform: rotate(120deg);
+    transform: rotate(120deg);
+    margin-top: 3px;
+    margin-left: 2px;
+}
+#helicopter .tail .blade:nth-of-type(3) {
+    -webkit-transform: rotate(240deg);
+    transform: rotate(240deg);
+    margin-top:1px;
+    margin-left:-4px;
+}
+
+@-webkit-keyframes tailrotate {
+	0% { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg);} 
+	100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -ms-transform: rotate(360deg); -o-transform: rotate(360deg); transform: rotate(360deg);} 
+}
+@keyframes tailrotate {
+	0% { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg);} 
+	100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -ms-transform: rotate(360deg); -o-transform: rotate(360deg); transform: rotate(360deg);} 
+}
+
+
+
+@-webkit-keyframes rotorrotate {
+	0% { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg);} 
+	100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -ms-transform: rotate(360deg); -o-transform: rotate(360deg); transform: rotate(360deg);} 
+}
+
+@keyframes rotorrotate {
+	0% { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg);} 
+	100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -ms-transform: rotate(360deg); -o-transform: rotate(360deg); transform: rotate(360deg);} 
+}
+
+@-webkit-keyframes bladestart {
+	0%   { 
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    } 
+	25%   { 
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+    } 
+	50%   { 
+        -webkit-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    } 
+	75%   { 
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+    } 
+	100%   { 
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    } 
+}
+@keyframes bladestart {
+	0%   { 
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    } 
+	25%   { 
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+    } 
+	50%   { 
+        -webkit-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    } 
+	75%   { 
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+    } 
+	100%   { 
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    } 
+}
+
+
+@-webkit-keyframes bladeslow {
+	0%   { 
+        -webkit-transform: scale(1.2, .85);
+        transform: scale(1.2, .85);
+    } 
+	25%   { 
+        -webkit-transform: scale(0, .85);
+        transform: scale(0, .85);
+    } 
+	50%   { 
+        -webkit-transform: scale(-1.2, .85);
+        transform: scale(-1.2, .85);
+    } 
+	75%   { 
+        -webkit-transform: scale(0, .85);
+        transform: scale(0, .85);
+    } 
+	100%   { 
+        -webkit-transform: scale(1.2, .85);
+        transform: scale(1.2, .85);
+    } 
+}
+@keyframes bladeslow {
+	0%   { 
+        -webkit-transform: scale(1.2, .85);
+        transform: scale(1.2, .85);
+    } 
+	25%   { 
+        -webkit-transform: scale(0, .85);
+        transform: scale(0, .85);
+    } 
+	50%   { 
+        -webkit-transform: scale(-1.2, .85);
+        transform: scale(-1.2, .85);
+    } 
+	75%   { 
+        -webkit-transform: scale(0, .85);
+        transform: scale(0, .85);
+    } 
+	100%   { 
+        -webkit-transform: scale(1.2, .85);
+        transform: scale(1.2, .85);
+    } 
+}
+
+
+@-webkit-keyframes blademid {
+	0%   { 
+        -webkit-transform: scale(1.3, .8);
+        transform: scale(1.3, .8);
+    } 
+	25%   { 
+        -webkit-transform: scale(0, .8);
+        transform: scale(0, .8);
+    } 
+	50%   { 
+        -webkit-transform: scale(-1.3, .8);
+        transform: scale(-1.3, .8);
+    } 
+	75%   { 
+        -webkit-transform: scale(0, .8);
+        transform: scale(0, .8);
+    } 
+	100%   { 
+        -webkit-transform: scale(1.3, .8);
+        transform: scale(1.3, .8);
+    } 
+}
+@keyframes blademid {
+	0%   { 
+        -webkit-transform: scale(1.3, .8);
+        transform: scale(1.3, .8);
+    } 
+	25%   { 
+        -webkit-transform: scale(0, .8);
+        transform: scale(0, .8);
+    } 
+	50%   { 
+        -webkit-transform: scale(-1.3, .8);
+        transform: scale(-1.3, .8);
+    } 
+	75%   { 
+        -webkit-transform: scale(0, .8);
+        transform: scale(0, .8);
+    } 
+	100%   { 
+        -webkit-transform: scale(1.3, .8);
+        transform: scale(1.3, .8);
+    } 
+}
+
+@-webkit-keyframes bouncetxt {
+	0% { 
+        -webkit-transform: translate(0px , 0px);
+        transform: translate(0px , 0px);
+    } 
+	50% { 
+        -webkit-transform: translate(0px , 8px);
+        transform: translate(0px , 8px);
+    } 
+	100% { 
+        -webkit-transform: translate(0px , 0px);
+        transform: translate(0px , 0px);
+    } 
+}
+@keyframes bouncetxt {
+	0% { 
+        -webkit-transform: translate(0px , 0px);
+        transform: translate(0px , 0px);
+    } 
+	50% { 
+        -webkit-transform: translate(0px , 8px);
+        transform: translate(0px , 8px);
+    } 
+	100% { 
+        -webkit-transform: translate(0px , 0px);
+        transform: translate(0px , 0px);
+    } 
+}
+
+
+
+@-webkit-keyframes bounce {
+	0% { 
+        -webkit-transform: translate(0px , 0px) rotate(8deg);
+        transform: translate(0px , 0px) rotate(8deg);
+    } 
+	50% { 
+        -webkit-transform: translate(0px , 30px) rotate(8deg);
+        transform: translate(0px , 30px) rotate(8deg);
+    } 
+	100% { 
+        -webkit-transform: translate(0px , 0px) rotate(8deg);
+        transform: translate(0px , 0px) rotate(8deg);
+    } 
+}
+
+@keyframes bounce {
+	0% { 
+        -webkit-transform: translate(0px , 0px) rotate(8deg);
+        transform: translate(0px , 0px) rotate(8deg);
+    } 
+	50% { 
+        -webkit-transform: translate(0px , 30px) rotate(8deg);
+        transform: translate(0px , 30px) rotate(8deg);
+    } 
+	100% { 
+        -webkit-transform: translate(0px , 0px) rotate(8deg);
+        transform: translate(0px , 0px) rotate(8deg);
+    } 
+}
+
+
+@media screen and (min-width: 350px) {
+    #helicopter {
+        zoom: .7;
+        left: 38vw;
+        bottom: 8%;
+    }
+}
+@media screen and (min-width: 400px) {
+    #helicopter {
+        zoom: .8;
+        left: 32vw;
+        bottom: 6%;
+    }
+}
+
+
+#music-page {
+    position: relative;
+    background-color: #fd7e28;
+    /*
+	background-image: url(../images/music/bg.png);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+	*/
+}
+
+#music-page .paper-1 {
+    position: absolute;
+    background-image: url(../images/music/paper.png);
+    background-size: 30vw;
+    background-repeat: no-repeat;
+    top: -10vw;
+    right: -10vw;
+    width: 30vw;
+    height: 30vw;
+    z-index: 1;
+}
+#music-page .paper-2 {
+    position: absolute;
+    background-image: url(../images/music/paper-2.png);
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    bottom: -23vw;
+    right: -5vw;
+    width: 50vw;
+    height: 50vw;
+    z-index: 1;
+}
+
+.cd-player {
+    position: relative;
+    width: 100vw;
+    top: 12%;
+    z-index: 2;
+	background-image: url(../images/music/bottom.png);
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (min-height: 500px) {
+    .cd-player {
+        top: 18%;
+    }
+
+    #music-page > .intro {
+        bottom: 15%;
+    }
+
+    .finger-3 {
+        top: 70vw;
+        left: 45vw;
+    }
+}
+@media screen and (min-height: 570px) {
+    #music-page > .intro {
+        bottom: 18%;
+    }
+}
+
+
+.cd-player .layer1 {
+    width: 75vw;
+    height: 75vw;
+    background-color: #ab947a;
+}
+.cd-player .layer2 {
+    width: 65vw;
+    height: 65vw;;
+    background-color: #181818;
+    box-shadow: 0 0 1rem #333;
+}
+
+#music-page .intro {
+    z-index: 20;
+}
+
+/*
+.cd-player .layer2 {
+    width: 75vw;
+    height: 80vw;;
+    position: relative;
+    background-image: url(../images/music/cd-all.png);
+    background-size: 75vw;
+    background-repeat: no-repeat;
+}
+*/
+
+.cd-player .layer3 {
+    width: 25vw;
+    height: 25vw;
+    background-image: url(../images/music/win.png);
+    background-size: 8vw;
+    background-repeat: no-repeat;
+    background-color: #9f141f;
+    background-position: center;
+    box-shadow: 0 2px 1rem #111;
+    z-index: 5;
+}
+.cd-player .layer3.start {
+    -webkit-animation: tailrotate 3s linear 0s infinite normal none;
+    animation: tailrotate 3s linear 0s infinite normal none;
+}
+
+.cd-player .player {
+    position: absolute;
+    right: 0;
+    top: -15%;
+    height: 60vw;
+    width: 25vw;
+    /*
+     * not working in ios
+     *
+    -webkit-transform-origin: 25vw 54vw;
+    */
+    -webkit-transform-origin: right 90%;
+    transform-origin: right 90%;
+    transition: all 1.5s ease;
+	margin-top: 45px;
+}
+
+.cd-player .player.start {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+.cd-player .player .pointer {
+    position: absolute;
+    z-index: 8;
+    top: 5vw;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/music/pointer.png);
+    background-size: 25vw;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.cd-player .player .shadow {
+    position: absolute;
+    top: 2vw;
+    right: 0;
+    z-index: 7;
+    width: 21vw;
+    height: 100%;
+    background-image: url(../images/music/pointer-shadow.png);
+    background-size: 27vw;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.cd-player .player .pad {
+    background-image: url(../images/music/pointer-pad.png);
+    background-size: 12vw;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    right: -5vw;
+    bottom: 0;
+    z-index: 9;
+}
+
+/*
+.cd-player .player .pad {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    background: #e5e5e5;
+    box-shadow: 0 0 2px #999;
+    right: -5vw;
+    bottom: 0;
+    z-index: 9;
+}
+*/
+
+.cd-player .note {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 4;
+
+    background-repeat: no-repeat;
+    transition: all 4s linear;
+}
+.cd-player .note1 {
+    width: 8vw;
+    height: 20vw;
+    background-size: 8vw;
+    background-image: url(../images/music/music.png);
+}
+.cd-player .note2 {
+    width: 8vw;
+    height: 12vw;
+    background-size: 8vw;
+    background-image: url(../images/music/music-2.png);
+}
+.cd-player .note3 {
+    width: 20vw;
+    height: 20vw;
+    background-size: auto 8vw;
+    background-image: url(../images/music/music-3.png);
+}
+.cd-player .note4 {
+    width: 10vw;
+    height: 13vw;
+    background-size: 10vw;
+    background-image: url(../images/music/music-4.png);
+}
+.cd-player .note5 {
+    width: 6vw;
+    height: 8vw;
+    background-size: 6vw;
+    background-image: url(../images/music/music-5.png);
+}
+.cd-player .note6 {
+    width: 8vw;
+    height: 12vw;
+    background-size: 8vw;
+    background-image: url(../images/music/music-6.png);
+}
+
+.cd-player .note1.start {
+    -webkit-animation: note1 4s linear 0s infinite normal none;
+    animation: note1 4s linear 0s infinite normal none;
+}
+.cd-player .note2.start {
+    -webkit-animation: note2 5s linear 0s infinite normal none;
+    animation: note2 5s linear 0s infinite normal none;
+}
+.cd-player .note3.start {
+    -webkit-animation: note3 6s linear 0s infinite normal none;
+    animation: note3 6s linear 0s infinite normal none;
+}
+.cd-player .note4.start {
+    -webkit-animation: note4 4.5s linear 0s infinite normal none;
+    animation: note4 4s linear 0s infinite normal none;
+}
+.cd-player .note5.start {
+    -webkit-animation: note5 6.5s linear 0s infinite normal none;
+    animation: note5 6.5s linear 0s infinite normal none;
+}
+.cd-player .note6.start {
+    -webkit-animation: note6 3.5s linear 0s infinite normal none;
+    animation: note6 3.5s linear 0s infinite normal none;
+}
+
+@-webkit-keyframes note1 {
+    to {
+        top: -15%;
+        left: -10%;
+        opacity: 0.3;
+    }
+}
+@keyframes note1 {
+    to {
+        top: -15%;
+        left: -10%;
+        opacity: 0.3;
+    }
+}
+@-webkit-keyframes note2 {
+    to {
+        top: -15%;
+        left: 25%;
+        opacity: 0.8;
+    }
+}
+@keyframes note2 {
+    to {
+        top: -15%;
+        left: 25%;
+        opacity: 0.8;
+    }
+}
+@-webkit-keyframes note3 {
+    to {
+        top: -15%;
+        left: 40%;
+        opacity: 0.3;
+    }
+}
+@keyframes note3 {
+    to {
+        top: -15%;
+        left: 40%;
+        opacity: 0.3;
+    }
+}
+@-webkit-keyframes note4 {
+    to {
+        top: -30%;
+        left: 10%;
+        opacity: 0.3;
+    }
+}
+@keyframes note4 {
+    to {
+        top: -30%;
+        left: 10%;
+        opacity: 0.3;
+    }
+}
+@-webkit-keyframes note5 {
+    to {
+        top: -20%;
+        left: 5%;
+        opacity: 0.3;
+    }
+}
+@keyframes note5 {
+    to {
+        top: -20%;
+        left: 5%;
+        opacity: 0.3;
+    }
+}
+
+@-webkit-keyframes note6 {
+    to {
+        top: -25%;
+        left: 35%;
+        opacity: 0.3;
+    }
+}
+@keyframes note6 {
+    to {
+        top: -25%;
+        left: 35%;
+        opacity: 0.3;
+    }
+}
+
+
+
+
+#windmill-page {
+    position: relative;
+    background-color: #64250f;
+}
+#windmill-page > .main {
+    width: 100vw;
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #bd6400;
+}
+#windmill-page > .main .building {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/windmill/buildings2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+#windmill-page > .main .intro {
+    z-index: 2;
+}
+/*
+#windmill-page > .main .grass {
+    width: 100vw;
+    height: 75vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/windmill/grass-all.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+*/
+
+#windmill-page > .main .pillar {
+    width: 10vw;
+    height: 62vw;
+    position: absolute;
+    background-image: url(../images/windmill/pillar.png);
+    background-size: 8vw;
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+#windmill-page > .main .pillar-1 {
+    bottom: -8vw;
+    left: 42vw;
+}
+#windmill-page > .main .pillar-2 {
+    bottom: -19vw;
+    left: 72vw;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+}
+
+#windmill-page > .main .windmill {
+    width: 65vw;
+    height: 75vw;
+    position: absolute;
+    background-image: url(../images/windmill/blade.png);
+    background-size: 65vw;
+    background-repeat: no-repeat;
+    -webkit-transform-origin: 34% center;
+    transform-origin: 34% center;
+}
+#windmill-page > .main .windmill-1 {
+    left: 24.5vw;
+    bottom: 15.5vw;
+    z-index: 6;
+}
+#windmill-page > .main .windmill-2 {
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    left: 54.7vw;
+    bottom: -11.5vw;
+    z-index: 5;
+}
+#windmill-page > .main .windmill-1.start {
+    -webkit-animation: rotorrotate 3s linear 0s infinite normal none;
+    animation: rotorrotate 3s linear 0s infinite normal none;
+}
+#windmill-page > .main .windmill-2.start {
+    -webkit-animation: windmillrotate 3s linear 0s infinite normal none;
+    animation: windmillrotate 3s linear 0s infinite normal none;
+}
+
+.flower {
+    position: absolute;
+    width: 14vw;
+    height: 14vw;
+    z-index: 6;
+    transition: all .6s ease;
+    opacity: 0;
+    -webkit-transform: scale(.5) translate(0px , 0);
+    transform: scale(.5) translate(0px , 0);
+
+    background-image: url(../images/windmill/flower.png);
+    background-size: 12vw;
+    background-repeat: no-repeat;
+    z-index: 4;
+}
+.flower.start {
+    opacity: .9;
+}
+.flower-1 {
+    left: 8vw;
+    bottom: 4%;
+}
+.flower-1.start {
+    -webkit-transform: scale(1) translate(0px , -2vw);
+    transform: scale(1) translate(0px , -2vw);
+}
+.flower-2 {
+    left: 3vw;
+    bottom: 30%;
+}
+.flower-2.start {
+    -webkit-transform: scale(.8) translate(0px , -2vw);
+    transform: scale(.8) translate(0px , -2vw);
+}
+.flower-3 {
+    left: 58vw;
+    bottom: 20%;
+    -webkit-transform: scale(.25) translate(0px , 0);
+    transform: scale(.25) translate(0px , 0);
+}
+.flower-3.start {
+    -webkit-transform: scale(.5) translate(0px , -2vw);
+    transform: scale(.5) translate(0px , -2vw);
+    opacity: .8;
+}
+.flower-6 {
+    left: 88vw;
+    bottom: 28%;
+}
+.flower-6.start {
+    -webkit-transform: scale(.75) translate(0px , -2vw);
+    transform: scale(.75) translate(0px , -2vw);
+    opacity: .85;
+}
+.flower-5 {
+    left: 72vw;
+    bottom: 34%;
+}
+.flower-5.start {
+    -webkit-transform: scale(.6) translate(0px , -2vw);
+    transform: scale(.6) translate(0px , -2vw);
+}
+.flower-4 {
+    left: 94vw;
+    bottom: 58%;
+}
+.flower-4.start {
+    -webkit-transform: scale(.85) translate(0px , -2vw);
+    transform: scale(.85) translate(0px , -2vw);
+}
+
+@-webkit-keyframes windmillrotate {
+	0% { 
+        -webkit-transform: rotate(0deg) scale(.5); 
+        transform: rotate(0deg) scale(.5); 
+    } 
+	100% { 
+        -webkit-transform: rotate(360deg) scale(.5); 
+        transform: rotate(360deg) scale(.5); 
+    } 
+}
+
+@keyframes windmillrotate {
+	0% { 
+        -webkit-transform: rotate(0deg) scale(.5); 
+        transform: rotate(0deg) scale(.5); 
+    } 
+	100% { 
+        -webkit-transform: rotate(360deg) scale(.5); 
+        transform: rotate(360deg) scale(.5); 
+    } 
+}
+
+#windmill-page > .main .building .light {
+    position: absolute;
+}
+#windmill-page > .main .building .light-1 {
+    position: relative;
+    width: 100%;
+    height: 40vw;
+}
+#windmill-page > .main .building .light-2 {
+    padding-top: 2vw;
+    top: 18vw;
+    left: -5vw;
+    width: 28vw;
+    height: 70vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-3 {
+    padding-top: 3.5vw;
+    top: 25vw;
+    left: 23.8vw;
+    width: 28vw;
+    height: 70vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-4 {
+    padding-top: 3.5vw;
+    top: 25vw;
+    left: 61vw;
+    width: 28vw;
+    height: 70vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light .cube {
+    display: inline-block;
+    margin: 1vw;
+    transition: opacity .4s ease;
+}
+#windmill-page > .main .building .light .cube.hidden {
+    opacity: 0;
+}
+#windmill-page > .main .building .light-1 .cube {
+    position: absolute;
+    background-color: #beb927; 
+    width: 2.4vw;
+    height: 2.4vw;
+}
+#windmill-page > .main .building .light-2 .cube {
+    background-color: #fff719;
+    width: 4.8vw;
+    height: 4.8vw;
+    margin: 1.8vw 1.3vw;
+}
+#windmill-page > .main .building .light-3 .cube {
+    width: 3.8vw;
+    height: 3.8vw;
+    margin: 1.3vw .8vw;
+    background-color: #fff719; 
+}
+#windmill-page > .main .building .light-4 .cube {
+    width: 3.8vw;
+    height: 3.8vw;
+    margin: 1.3vw .8vw;
+    background-color: #fff719; 
+}
+#windmill-page > .main .building .light-1 .cube-1 {
+    left: 25vw;
+    top: 19vw;
+    opacity: .5;
+}
+#windmill-page > .main .building .light-1 .cube-2 {
+    left: 38vw;
+    top: 21vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-1 .cube-3 {
+    left: 40.5vw;
+    top: 15vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-1 .cube-4 {
+    left: 44.5vw;
+    top: 19.5vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-1 .cube-5 {
+    left: 53vw;
+    top: 24vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-1 .cube-6 {
+    left: 56.5vw;
+    top: 29vw;
+    opacity: .9;
+}
+#windmill-page > .main .building .light-1 .cube-7 {
+    left: 92.5vw;
+    top: 22.5vw;
+    opacity: .7;
+}
+#windmill-page > .main .building .light-4 .cube-1,
+#windmill-page > .main .building .light-4 .cube-2,
+#windmill-page > .main .building .light-4 .cube-3,
+#windmill-page > .main .building .light-4 .cube-4 {
+    opacity: .9;
+}
+#windmill-page > .main .building .light-4 .cube-5,
+#windmill-page > .main .building .light-4 .cube-6,
+#windmill-page > .main .building .light-4 .cube-7,
+#windmill-page > .main .building .light-4 .cube-8 {
+    opacity: .8;
+}
+#windmill-page > .main .building .light-4 .cube-9,
+#windmill-page > .main .building .light-4 .cube-10,
+#windmill-page > .main .building .light-4 .cube-11,
+#windmill-page > .main .building .light-4 .cube-12 {
+    opacity: .7;
+}
+#windmill-page > .main .building .light-4 .cube-13,
+#windmill-page > .main .building .light-4 .cube-14,
+#windmill-page > .main .building .light-4 .cube-15,
+#windmill-page > .main .building .light-4 .cube-16 {
+    opacity: .55;
+}
+#windmill-page > .main .building .light-4 .cube-17,
+#windmill-page > .main .building .light-4 .cube-18,
+#windmill-page > .main .building .light-4 .cube-19,
+#windmill-page > .main .building .light-4 .cube-20 {
+    opacity: .4;
+}
+#windmill-page > .main .building .light-4 .cube-21,
+#windmill-page > .main .building .light-4 .cube-22,
+#windmill-page > .main .building .light-4 .cube-23,
+#windmill-page > .main .building .light-4 .cube-24 {
+    opacity: .3;
+}
+
+@-webkit-keyframes navmove {
+	0% { 
+        -webkit-transform: translate(0px , 0px) rotate(45deg);
+        transform: translate(0px , 0px) rotate(45deg);
+        opacity: 0;
+    }
+	50% {
+        -webkit-transform: translate(0px , 10px) rotate(45deg);
+        transform: translate(0px , 10px) rotate(45deg);
+        opacity: 0.7;
+    } 
+	100% {
+        -webkit-transform: translate(0px , 20px) rotate(45deg);
+        transform: translate(0px , 20px) rotate(45deg);
+        opacity: 0;
+    } 
+}
+@keyframes navmove {
+	0% { 
+        -webkit-transform: translate(0px , 0px) rotate(45deg);
+        transform: translate(0px , 0px) rotate(45deg);
+        opacity: 0;
+    }
+	50% {
+        -webkit-transform: translate(0px , 10px) rotate(45deg);
+        transform: translate(0px , 10px) rotate(45deg);
+        opacity: 0.7;
+    } 
+	100% {
+        -webkit-transform: translate(0px , 20px) rotate(45deg);
+        transform: translate(0px , 20px) rotate(45deg);
+        opacity: 0;
+    } 
+}
+
+
+
+@-webkit-keyframes cloudmove1 {
+	0% { 
+        left: 101vw;
+    }
+    100% {
+        left: -50vw;
+    }
+}
+@-webkit-keyframes cloudmove3 {
+	0% { 
+        left: 150vw;
+    }
+    100% {
+        left: -50vw;
+    }
+}
+@-webkit-keyframes cloudmove4 {
+	0% { 
+        left: 120vw;
+    }
+    100% {
+        left: -30vw;
+    }
+}
+
+@-webkit-keyframes cloudmove5 {
+	0% { 
+        left: 270vw;
+    }
+    100% {
+        left: -30vw;
+    }
+}
+
+
+@keyframes cloudmove1 {
+	0% { 
+        left: 101vw;
+    }
+    100% {
+        left: -50vw;
+    }
+}
+@keyframes cloudmove3 {
+	0% { 
+        left: 150vw;
+    }
+    100% {
+        left: -50vw;
+    }
+}
+@keyframes cloudmove4 {
+	0% { 
+        left: 120vw;
+    }
+    100% {
+        left: -30vw;
+    }
+}
+@keyframes cloudmove5 {
+	0% { 
+        left: 270vw;
+    }
+    100% {
+        left: -30vw;
+    }
+}
+
+
+
+
+#bigwheel-page {
+    position: relative;
+	/*
+    background-color: #a2faff;
+	*/
+	background: url(../images/bigwheel/bg.png) no-repeat;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+#bigwheel-page .ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 67.66vw;
+
+    background-image: url(../images/bigwheel/ground.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+#bigwheel-page .rotor {
+    position: absolute;
+    bottom: 30.3vw;
+    left: 12.45vw;
+    width: 76vw;
+    height: 76vw;
+
+    background-image: url(../images/bigwheel/rotor.png);
+    background-size: 76vw;
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+#bigwheel-page .rotor.start {
+    -webkit-animation: rotorrotate 10s linear 0s infinite normal none;
+    animation: rotorrotate 10s linear 0s infinite normal none;
+}
+
+#bigwheel-page .cloud {
+    position: absolute;
+    background-image: url(../images/bigwheel/cloud.png);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+#bigwheel-page .cloud-1 {
+    bottom: 90vw;
+    left: 101vw;
+    width: 12vw;
+    height: 10vw;
+    -webkit-animation: cloudmove1 40s linear 0s infinite normal none;
+    animation: cloudmove1 40s linear 0s infinite normal none;
+    background-size: 12vw;
+}
+#bigwheel-page .cloud-2 {
+    bottom: 100vw;
+    left: 150vw;
+    width: 20vw;
+    height: 16vw;
+    -webkit-animation: cloudmove3 40s linear 0s infinite normal none;
+    animation: cloudmove3 40s linear 0s infinite normal none;
+    background-size: 20vw;
+}
+#bigwheel-page .balloon {
+    position: absolute;
+    background-image: url(../images/bigwheel/balloon.png);
+    background-repeat: no-repeat;
+    z-index: 5;
+    bottom: 90vw;
+    right: 5vw;
+
+    width: 10vw;
+    height: 18vw;
+    -webkit-animation: bouncetxt 4s ease-in-out 0s infinite normal none;
+    animation: bouncetxt 4s ease-in-out 0s infinite normal none;
+    background-size: 10vw;
+}
+#bigwheel-page .intro {
+    position: relative;
+    z-index: 10;
+    /*
+    color: #5d5d5d;
+    text-shadow: 1px 1px 2px rgba(30, 30, 30, .50);
+    */
+}
+
+
+
+
+
+
+#description-page {
+    position: relative;
+    background-color: #fe8c27;
+}
+#description-page .main {
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    z-index: 1;
+    display: table;
+}
+#description-page .main .main-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+#description-page .gear {
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+#description-page .gear-1 {
+    width: 42vw;
+    height: 42vw;
+    position: absolute;
+    top: -20vw;
+    left: 29vw;
+
+    -webkit-transform-origin: 52.42% 50.61%;
+    transform-origin: 52.42% 50.61%;
+    background-size: 42vw;
+    background-image: url(../images/description/gear-1.png);
+    -webkit-animation: tailrotate 15s linear 0s infinite normal none;
+    animation: tailrotate 15s linear 0s infinite normal none;
+}
+#description-page > .title {
+    width: 24vw;
+    height: 12vw;
+    position: absolute;
+    top: 4vw;
+    left: 39vw;
+    z-index: 3;
+
+    background-size: 24vw;
+    background-image: url(../images/description/title.png);
+    background-repeat: no-repeat;
+}
+#description-page .gear-small {
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    background-image: url(../images/description/gear-small.png);
+    background-size: 20vw;
+}
+#description-page .gear-2 {
+    top: -8vw;
+    left: -8vw;
+    -webkit-animation: anticlockwise 5s linear 0s infinite normal none;
+    animation: anticlockwise 5s linear 0s infinite normal none;
+}
+#description-page .gear-3 {
+    width: 42vw;
+    height: 42vw;
+    position: absolute;
+    left: 29vw;
+    background-size: 42vw;
+    bottom: -24vw;
+    -webkit-transform-origin: 51.29% 49.73%;
+    transform-origin: 51.29% 49.73%;
+    background-image: url(../images/description/gear-2.png);
+    -webkit-animation: anticlockwise 15s linear 0s infinite normal none;
+    animation: anticlockwise 15s linear 0s infinite normal none;
+}
+#description-page .gear-4 {
+    width: 24vw;
+    height: 24vw;
+    position: absolute;
+    left: 38vw;
+    bottom: -14vw;
+    z-index: 4;
+
+    background-image: url(../images/description/gear-3.png);
+    background-size: 24vw;
+    -webkit-transform-origin: 52.07% 48.77%;
+    transform-origin: 52.07% 48.77%;
+    -webkit-animation: tailrotate 15s linear 0s infinite normal none;
+    animation: tailrotate 15s linear 0s infinite normal none;
+}
+#description-page .down-icon {
+    display: none;
+    width: 8vw;
+    height: 5vw;
+    position: absolute;
+    left: 46.7vw;
+    bottom: -1vw;
+    background-image: url(../images/description/down.png);
+    background-size: 8vw;
+    background-repeat: no-repeat;
+    z-index: 4;
+    opacity: .8;
+}
+#description-page .down-icon.start {
+    -webkit-animation: downiconmove 1.5s linear 0s infinite normal none;
+    animation: downiconmove 1.5s linear 0s infinite normal none;
+}
+#description-page .gear-5 {
+    bottom: 3vw;
+    right: -8vw;
+    -webkit-animation: tailrotate 5s linear 0s infinite normal none;
+    animation: tailrotate 5s linear 0s infinite normal none;
+}
+
+
+#description-page .row {
+    margin: 4vw .5vw;
+    text-align: left;
+
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: .1rem;
+    text-shadow: 2px 1px 3px rgba(60, 60, 60, .50);
+    font-size: 1.1rem;
+}
+/*
+#description-page .row.start {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+*/
+#description-page .row .col-hdr .inner,
+#description-page .row .col-title .inner {
+    position: relative;
+    transition: left .2s cubic-bezier(0.23, 0.22, 0, 1.25);
+    left: -50vw;
+}
+#description-page .row .col-hdr .inner.start,
+#description-page .row .col-title .inner.start {
+    left: 0;
+}
+#description-page .row .col-content .inner {
+    transition: all 1s ease;
+    opacity: 0;
+    /*
+    position: relative;
+    left: 100vw;
+    */
+    /*
+    -webkit-transform: translate(100vw, 0);
+    transform: translate(100vw, 0);
+    */
+}
+#description-page .row .col-content .inner.start {
+    opacity: 1;
+    /*
+    left: 0;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    */
+}
+#description-page .row .col {
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+/*
+#description-page .row .col .inner {
+    transition: all .3s ease;
+}
+*/
+#description-page .row .col-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+/*
+#description-page .row .col-title .inner.hidden {
+    opacity: 0;
+    -webkit-transform: translate(100px , 0px);
+    transform: translate(100px , 0px);
+}
+#description-page .row .col-hdr .inner.hidden {
+    opacity: 0;
+    -webkit-transform: translate(100px , 0px);
+    transform: translate(100px , 0px);
+}
+#description-page .row .col-content .inner.hidden {
+    opacity: 0;
+    -webkit-transform: translate(100px , 0px);
+    transform: translate(100px , 0px);
+}
+*/
+#description-page .col-hdr > .inner {
+    background-repeat: no-repeat;
+    background-size: 12vw;
+    width: 12vw;
+    height: 12vw;
+}
+#description-page .row-1 .col-hdr > .inner {
+    background-image: url(../images/description/up-down.png);
+}
+#description-page .row-2 .col-hdr > .inner {
+    background-image: url(../images/description/safe.png);
+}
+#description-page .row-3 .col-hdr > .inner {
+    background-image: url(../images/description/ruler.png);
+}
+#description-page .row-4 .col-hdr > .inner {
+    background-image: url(../images/description/chart.png);
+}
+
+@-webkit-keyframes anticlockwise {
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);} 
+	100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg);} 
+}
+@keyframes anticlockwise {
+	0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);} 
+	100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg);} 
+}
+
+@-webkit-keyframes downiconmove {
+	0% { 
+        -webkit-transform: translate(0px , 0px);
+        transform: translate(0px , 0px);
+        opacity: 0;
+    }
+	50% {
+        -webkit-transform: translate(0px , 10px);
+        transform: translate(0px , 10px);
+        opacity: 0.8;
+    } 
+	100% {
+        -webkit-transform: translate(0px , 20px);
+        transform: translate(0px , 20px);
+        opacity: 0;
+    } 
+}
+@keyframes downiconmove {
+	0% { 
+        -webkit-transform: translate(0px , 0px);
+        transform: translate(0px , 0px);
+        opacity: 0;
+    }
+	50% {
+        -webkit-transform: translate(0px , 10px);
+        transform: translate(0px , 10px);
+        opacity: 0.8;
+    } 
+	100% {
+        -webkit-transform: translate(0px , 20px);
+        transform: translate(0px , 20px);
+        opacity: 0;
+    } 
+}
+
+
+#redirect-page {
+    position: relative;
+    background-color: #fe8c27;
+}
+#redirect-page .title {
+    width: 50vw;
+    height: 22vw;
+    position: absolute;
+    top: 8%;
+    left: 25vw;
+    z-index: 1;
+
+    background-size: 50vw;
+    background-image: url(../images/description/title.png);
+    background-repeat: no-repeat;
+}
+#redirect-page .main {
+    width: 100vw;
+    height: 70vw;
+    position: absolute;
+    top: 22%;
+    left: 0;
+}
+
+#redirect-page .gear-1 {
+    width: 60vw;
+    height: 60vw;
+    position: absolute;
+    left: 20vw;
+    background-size: 60vw;
+    top: 5vw;
+    background-image: url(../images/description/gear-1.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+
+    -webkit-transform-origin: 52.42% 50.61%;
+    transform-origin: 52.42% 50.61%;
+}
+#redirect-page .gear-1.start {
+    -webkit-animation: tailrotate 9s linear 0s infinite normal none;
+    animation: tailrotate 9s linear 0s infinite normal none;
+}
+#redirect-page .gear-2.start {
+    -webkit-animation: anticlockwise 8s linear 0s infinite normal none;
+    animation: anticlockwise 8s linear 0s infinite normal none;
+}
+
+#redirect-page .gear-2 {
+    width: 40vw;
+    height: 40vw;
+    position: absolute;
+    left: 31vw;
+    background-size: 40vw;
+    top: 15vw;
+    background-image: url(../images/description/gear-2.png);
+    background-repeat: no-repeat;
+    z-index: 3;
+    -webkit-transform-origin: 51.29% 49.73%;
+    transform-origin: 51.29% 49.73%;
+}
+#redirect-page .start-btn {
+    width: 100vw;
+    height: 70vw;
+    vertical-align: middle;
+    position: relative;
+    z-index: 4;
+    font-size: 5.8vw;
+    left: 1.3vw;
+    font-weight: 800;
+}
+#redirect-page .descr {
+    z-index: 1;
+    width: 80vw;
+    /*
+    height: 15%;
+    */
+    font-size: 4.5vw;
+    position: absolute;
+    left: 10vw;
+    bottom: 2%;
+    font-weight: 800;
+    padding: 10px;
+    line-height: 1.5;
+    letter-spacing: .1rem;
+}
+
+#redirect-page .descr .inner {
+    margin: 2vw 0;
+}
+
+@media screen and (min-height: 500px) {
+
+    #redirect-page .title {
+        top: 10%;
+    }
+    #redirect-page .main {
+        top: 25%;
+    }
+    #redirect-page .descr {
+        bottom: 8%;
+    }
+
+
+    #bigwheel-page .intro {
+        top: 4%;
+    }
+    #bigwheel-page .cloud-1 {
+        bottom: 95vw;
+    }
+    #bigwheel-page .cloud-2 {
+        bottom: 105vw;
+    }
+    #bigwheel-page .balloon {
+        bottom: 100vw;
+    }
+
+
+    #description-page .row {
+        margin: 6vw .5vw;
+        line-height: 1.5;
+    }
+
+    /*
+    #description-page .gear-3 {
+        bottom: -21vw;
+    }
+    #description-page .gear-4 {
+        bottom: -11vw;
+    }
+
+    #description-page .down-icon {
+        bottom: 1vw;
+    }
+    */
+}
+
+@media screen and (min-height: 650px) {
+    #description-page .row {
+        margin: 10vw .5vw;
+    }
+
+    #bigwheel-page .cloud-1 {
+        bottom: 105vw;
+    }
+    #bigwheel-page .cloud-2 {
+        bottom: 115vw;
+    }
+    #bigwheel-page .intro {
+        top: 8%;
+    }
+}
+@media screen and (min-height: 680px) {
+    #description-page .row {
+        margin: 13vw .5vw;
+    }
+}
+
+@media screen and (min-height: 650px) {
+    #redirect-page .title {
+        top: 12%;
+    }
+    #redirect-page .main {
+        top: 28%;
+    }
+    #redirect-page .descr {
+        bottom: 7%;
+    }
+}

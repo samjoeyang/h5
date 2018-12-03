@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <title>东方证券闹元宵 转起福气赢好礼</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript">
+        function parseUA() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) != "micromessenger") {
+                //location.href = './pc.html';
+            }
+        }
+        parseUA();
+    </script>
+    <script src="./js/jquery-1.9.1.js"></script>
+</head>
+<body>
+<div style='display:none;'>
+    <img src='images/d.png' width="300px" height="300px" />
+</div>
+<div id="three">
+
+</div>
+<div id="main">
+    <div id="loading"></div>
+    <div id="preload">
+        <div class="group">
+            <div class="title">
+                <img src="images/preload/title.png">
+            </div>
+            <div class="cxt">
+                <div class="n1"><img src="images/preload/tip_1.png"></div>
+                <div class="n2"><img src="images/preload/tip_2.png"></div>
+                <div class="n3"><img src="images/preload/tip_3.png"></div>
+            </div>
+            <div id="start" class="btn">
+                <img src="images/preload/btn.png">
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <div class="btnMuteOn"></div>
+        <div class="btnMuteOff"></div>
+    </div>
+    <div class="lantern">
+        <div class="f"></div>
+        <div class="y"></div>
+        <div class="d"></div>
+        <div class="ff"></div>
+        <div class="l"></div>
+    </div>
+    <div id="tip"></div>
+    <div id="tip2"></div>
+    <div id="rule"></div>
+    <div id="success">
+        <div class="title"></div>
+        <div class="txt"></div>
+        <div class="name">
+            <input id="nickname" type="text" placeholder="姓名">
+        </div>
+        <div class="mobile">
+            <input id="mobile" type="number" placeholder="手机号码">
+        </div>
+        <div class="sub"></div>
+    </div>
+    <div id="share">
+        <img src="images/share.gif">
+    </div>
+</div>
+<audio id="bgm" preload="auto" src="./sound/bgm.mp3" loop=""></audio>
+
+<script type="text/javascript" src="./js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+        document.getElementById('bgm').load();
+        $("#loading").css({display: "none"}), $("#preload").css({display: "block"})
+    });
+</script>
+<script src="./js/three.min.js"></script>
+<script src="./js/main.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="function.js"></script>
+</body>
+</html>

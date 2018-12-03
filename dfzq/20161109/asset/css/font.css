@@ -1,0 +1,24 @@
+/*
+@font-face {
+    font-family: 'FZLT';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/FZLTXHJW.TTF) format('truetype');
+}
+*/
+
+@font-face {
+    font-family: 'FZLT';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../font/FZLTHJW.TTF) format('truetype');
+}
+
+/*
+@font-face {
+    font-family: 'FZLT';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../font/FZLTZHJW.TTF) format('truetype');
+}
+*/

@@ -1,0 +1,246 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>一个全世界玩疯了的母亲节的有趣问答</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="./weui/style/weui.css"/>
+  <link rel="stylesheet" href="./weui/style/weui2.css"/>
+  <link rel="stylesheet" href="./weui/style/weui3.css"/>
+  <script src="./weui/zepto.min.js"></script>
+  <script src="./weui/fullpage.js"></script>
+<style>
+.page-wrap {
+    width: 100%;
+    height: 100%;
+}
+.page {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+.page{
+    background-color: #BE5A4A;
+}
+.current .arrow {
+    -webkit-animation: swipeMoveTop 1.5s 1s ease infinite;
+}
+
+.current .arrow-h {
+    -webkit-animation: swipeMoveLeft 1.5s 1s ease infinite;
+}
+
+.current #readygo{
+	-webkit-animation: swipeMoveLeft 4s 2s ease infinite;
+}
+
+/*上滑提示*/
+@-webkit-keyframes swipeMoveTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 10px, 0);
+    }
+    70% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -10px, 0);
+    }
+}
+
+/*左滑提示*/
+@-webkit-keyframes swipeMoveLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(10px, 0, 0);
+    }
+    70% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(-10px, 0, 0);
+    }
+}
+
+@-webkit-keyframes slideToTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+
+/*自定义*/
+.title {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    color: #000;
+    font-size: 18px;
+    opacity: 0;
+}
+
+.subtitle {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    color: #000;
+    font-size: 16px;
+    opacity: 0;
+}
+.current .title{
+	-webkit-animation: slideToTop .8s ease both;
+}
+
+.current .animation{
+	-webkit-animation: slideToTop .8s ease both;
+}
+
+.current .subtitle{
+	-webkit-animation: slideToTop .8s 0.3s ease both;
+}
+</style>
+<script>
+$(function(){
+
+});
+</script>
+</head>
+<body ontouchstart>
+<div class="page-wrap">
+    <div class="page">
+        <img class="nextpage" src="./images/pang.1.jpg" style="position: absolute; width: 100%; height: 100%;">
+		<div class="nextpage animation" style="position: absolute;width:100%;top:16.8%;left:0;"><img src="./images/pang.1_03.png?v=1" style="width:100%"></div>
+		<div class="weui_btn_default weui-header" style="background:#fff;padding: 0;margin: 0;height: 48px;">
+			<div class="weui-header-left" style="position: absolute;left:0;top:0;"><img src="./images/pang-1-_01.png" style="height:48px"></div>
+			<img id="headimg" src="./images/pang-1-_00.png" style="width:100%;height:auto;float:left;">
+			<div class="weui-header-right" style="position: absolute;right:0;top:0;"><img src="./images/pang-1-_03.png" style="height:48px"></div> 
+		</div>
+    </div>
+	<div class="page" data-lock-next="true">
+		<div class="animation" style="position: absolute;width:100%;top:25%;left:0;"><img src="./images/pang.2_02.png?v=1" style="width:100%"></div>
+		<div id="readygo" class="nextpage" style="position: absolute;width:100%;top:54%;left:0;"><img src="./images/pang.2_04.png?v=1" style="width:100%"></div>
+		<div class="" style="position: absolute;width:100%;top:66.6%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+    <div class="page" style="-webkit-overflow-scrolling: touch;" data-lock-next="true">
+		<div class="animation" style="position:absolute;width:100%;top:14.9%;left:0;"><img src="./images/pang-3.1_02.png?v=1" style="width:100%"></div>
+		<div class="cntimgs" style="position:absolute;width:100%;top:23.6%;left:0;">
+			<img class="imgs" src="./images/pang-3.1_04.png?v=1" style="width:100%">
+			<div class="imgs clickable"><img src="./images/pang-3.1_05.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.1_06.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.1_07.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.1_08.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.1_09.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.1_10.png?v=1" style="width:100%"></div>
+			<img class="imgs" src="./images/pang-3.1_11.png?v=1" style="width:100%">
+		</div>
+		<div class="" style="position: absolute;width:100%;top:82%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+	<div class="page" style="-webkit-overflow-scrolling: touch;" data-lock-next="true">
+		<div class="animation" style="position:absolute;width:100%;top:14.9%;left:0;"><img src="./images/pang-3.2_02.png?v=1" style="width:100%"></div>
+		<div class="cntimgs" style="position:absolute;width:100%;top:23.6%;left:0;">
+			<img class="imgs" src="./images/pang-3.2_04.png?v=1" style="width:100%">
+			<div class="imgs clickable"><img src="./images/pang-3.2_05.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.2_06.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.2_07.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.2_08.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.2_09.png?v=1" style="width:100%"></div>
+			<img class="imgs" src="./images/pang-3.2_10.png?v=1" style="width:100%">
+		</div>
+		<div class="" style="position: absolute;width:100%;top:82%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+	<div class="page" style="-webkit-overflow-scrolling: touch;" data-lock-next="true">
+		<div class="animation" style="position:absolute;width:100%;top:14.9%;left:0;"><img src="./images/pang-3.3_02.png?v=1" style="width:100%"></div>
+		<div class="cntimgs" style="position:absolute;width:100%;top:23.6%;left:0;">
+			<img class="imgs" src="./images/pang-3.3_04.png?v=1" style="width:100%">
+			<div class="imgs clickable"><img src="./images/pang-3.3_05.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.3_06.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.3_07.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.3_08.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.3_09.png?v=1" style="width:100%"></div>
+			<img class="imgs" src="./images/pang-3.3_10.png?v=1" style="width:100%">
+		</div>
+		<div class="" style="position: absolute;width:100%;top:82%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+	<div class="page" style="-webkit-overflow-scrolling: touch;" data-lock-next="true">
+		<div class="animation" style="position:absolute;width:100%;top:12%;left:0;"><img src="./images/pang-3.4_02.png?v=1" style="width:100%"></div>
+		<div class="cntimgs" style="position:absolute;width:100%;top:23.6%;left:0;">
+			<img class="imgs" src="./images/pang-3.4_04.png?v=1" style="width:100%">
+			<div class="imgs clickable"><img src="./images/pang-3.4_05.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.4_06.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.4_07.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.4_08.png?v=1" style="width:100%"></div>
+			<img class="imgs" src="./images/pang-3.4_09.png?v=1" style="width:100%">
+		</div>
+		<div class="" style="position: absolute;width:100%;top:82%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+	<div class="page" style="-webkit-overflow-scrolling: touch;" data-lock-next="true">
+		<div class="animation" style="position:absolute;width:100%;top:12%;left:0;"><img src="./images/pang-3.5_02.png?v=1" style="width:100%"></div>
+		<div class="cntimgs" style="position:absolute;width:100%;top:23.6%;left:0;">
+			<img class="imgs" src="./images/pang-3.5_04.png?v=1" style="width:100%">
+			<div class="imgs clickable"><img src="./images/pang-3.5_05.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.5_06.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.5_07.png?v=1" style="width:100%"></div>
+			<div class="imgs clickable"><img src="./images/pang-3.5_08.png?v=1" style="width:100%"></div>
+			<img class="imgs" src="./images/pang-3.5_09.png?v=1" style="width:100%">
+		</div>
+		<div class="" style="position: absolute;width:100%;top:82%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+    <div class="page">
+		<div class="" style="position: absolute;width:100%;top:12.5%;left:0;"><img src="./images/last_02.png?v=1" style="width:100%"></div>
+		<div class="animation" style="position: absolute;width:100%;top:30.7%;left:0;"><img src="./images/last_04.png?v=1" style="width:100%"></div>
+		<div class="" style="position: absolute;width:100%;top:57%;left:0;"><img src="./images/last_06.png?v=1" style="width:100%"></div>
+		<div class="" style="position: absolute;width:100%;top:81.3%;left:0;"><img src="./images/pang.2_07.png?v=1" style="width:100%"></div>
+    </div>
+</div>
+<script>
+	var PageSlider =  new PageSlider({
+        pages: $('.page-wrap .page'),
+        animationPlayOnce: false,
+        direction: 'v',
+        gestureFollowing: 'true'
+    });
+	$('#btn, .nextpage').on('tap', function(){
+        PageSlider.next();
+    });
+	$('.clickable').on('tap', function(){
+		$(this).parent().find('.checked').removeClass("checked");
+        if($(this).hasClass("checked")){
+			$(this).removeClass("checked");
+		}else{
+			$(this).addClass("checked");
+		}
+		sleep(500).then(() => {
+			PageSlider.next();
+		})
+	});
+	function sleep (time) {
+		return new Promise((resolve) => setTimeout(resolve, time));
+	}
+	$(function($) {
+		var height = $('#headimg').height();
+		if(height <= 48){
+			return false;
+		}
+		$('.weui-header').css('height',height+'px');
+		$('.weui-header .weui-header-left img').css('height',height+'px');
+		$('.weui-header .weui-header-right img').css('height',height+'px');
+	})
+</script>
+<div style="position: absolute; width:1px; height:1px;top:-1px;left:-1px;"><audio autoplay="autoplay" preload="auto" src="./mu/1-01-Coda.mp3" loop="loop"></audio></div>
+</body>
+</html>
+
