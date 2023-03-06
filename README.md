@@ -12,4 +12,4 @@
 
 [小课堂临时中转站页面-黄](https://samjoeyang.github.io/h5/dfzq/dfzq_otc_wechat/yellow.html)
 
-[创全宣传](https://samjoeyang.github.io/h5/etyy/chuangquan.html)
+[创全宣传](https://samjoeyang.github.io/h5/etyy/swipershow/chuangquan.html)

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>H5展示页面</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <!-- 如果安装了GCF，则使用GCF来渲染页面，如果没有安装GCF，则使用最高版本的IE内核进行渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="baidu-site-verification" content="2MKKT6mbuL">
+    <meta name="viewport" id="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover, shrink-to-fit=no">
+    <meta name="keywords" content="H5展示页面">
+    <meta name="description" content="H5展示页面">
+
+    <meta name="author" content="">
+    <meta name='full-screen' content='true' />
+    <meta name='x5-fullscreen' content='true' />
+    <meta name='360-fullscreen' content='true' />
+
+    <meta name="browsermode" content="application" /> <!-- UC默认竖屏 ，UC强制全屏 -->
+    <meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
+
+    <meta name="x5-page-mode" content="app" /> <!-- QQ强制全屏 -->
+    <meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
+
+    <!-- 360浏览器默认开启极速模式 -->
+    <meta name=”renderer” content=”webkit”>
+    <meta name="robots" content="index, follow">
+    <meta name="format-detection" content="telephone=no"><!-- no cache -->
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+
+    <meta itemprop="name" content="H5展示页面">
+    <meta itemprop="description" name="description" content="H5展示页面">
+    <meta itemprop="image"
+        content="//127.0.0.1:8080/material/3197018f85b748e7aea93302efd9e524/1677336451732-zjo375jkzfk.jpg">
+    <!-- 资源域名预加载 -->
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    /*
+    setInterval(function () {
+        var audio = document.querySelector('audio')
+        if (audio.paused) {
+            audio.play().catch(function(error) {
+                alert(error)
+            })
+        }
+    }, 5000)
+    */
+    $(document).ready(function () {
+        const o = 'wx7fd0be08ea2fc7b6'
+        const c = 'werew23ewr3'
+        if (window.top === window && /MicroMessenger/i.test(window.navigator.userAgent)) {
+            // alert(window.top.location.href)
+            var key = (new Date().getTime()) + '' + Math.random()
+            if (window.localStorage.getItem('zhenzhidao_viewercounterkey') === null) {
+                window.localStorage.setItem('zhenzhidao_viewercounterkey', key)
+            } else {
+                key = window.localStorage.getItem('zhenzhidao_viewercounterkey')
+            }
+            var openid = window.localStorage.getItem('zhenzhidao_vieweropenid')
+            if (window.top.location.href.indexOf('code') > -1 || (openid !== null && openid.toString().length >
+                    0)) {
+                // do nothing
+            } else {
+                // do something
+            }
+        }
+    });
+
+</script>
+
+</html>
