@@ -1,0 +1,8 @@
+@font-face {
+	font-family: default;
+	font-display:swap;
+	src: local('default'),
+		url('//127.0.0.1:8080/fonts/251881227_1677434821000/default.woff2') format('woff2'),
+		url('//127.0.0.1:8080/fonts/251881227_1677434821000/default.woff') format('woff'),
+		url('//127.0.0.1:8080/fonts/251881227_1677434821000/default.ttf') format('truetype')
+}

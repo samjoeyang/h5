@@ -1,0 +1,16 @@
+@font-face {
+	font-family: REEJI-CHAO-JuechenGBT;
+	font-display:swap;
+	src: local('REEJI-CHAO-JuechenGBT'),
+		url('/fonts/251862073_1677395135000/REEJI-CHAO-JuechenGBT.woff2') format('woff2'),
+		url('/fonts/251862073_1677395135000/REEJI-CHAO-JuechenGBT.woff') format('woff'),
+		url('/fonts/251862073_1677395135000/REEJI-CHAO-JuechenGBT.ttf') format('truetype')
+}
+@font-face {
+	font-family: Dream_XiaDaoGBT;
+	font-display:swap;
+	src: local('Dream_XiaDaoGBT'),
+		url('/fonts/251862073_1677395135000/Dream_XiaDaoGBT.woff2') format('woff2'),
+		url('/fonts/251862073_1677395135000/Dream_XiaDaoGBT.woff') format('woff'),
+		url('/fonts/251862073_1677395135000/Dream_XiaDaoGBT.ttf') format('truetype')
+}
