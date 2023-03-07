@@ -1,5 +1,6 @@
-var appID = ""
-var api_domain = window.top.location.origin
+var appID = "wx7fd0be08ea2fc7b6"
+// var api_domain = window.top.location.origin
+var api_domain = "https://www.zhenzhviidaole.com"
 var isWXBrowser = navigator.appVersion.indexOf('MicroMessenger/') > -1 || navigator.userAgent.indexOf('MicroMessenger/') > -1
 
 function trim(str) {
@@ -38,8 +39,18 @@ function getFavIconUrl(url) {
     return "http://www.google.com/s2/favicons?domain=" + prohost[1] + prohost[2];
 }
 
+function getUserKey() {
+    var key = (new Date().getTime()) + '' + Math.random()
+    if (window.localStorage.getItem('zhenzhidaole_viewercounterkey') === null) {
+        window.localStorage.setItem('zhenzhidaole_viewercounterkey', key)
+    } else {
+        key = window.localStorage.getItem('zhenzhidaole_viewercounterkey')
+    }
+    return key
+}
+
 function chkOpenid() {
-    openid = window.localStorage.getItem('zhenzhidao_vieweropenid')
+    openid = window.localStorage.getItem('zhenzhidaole_vieweropenid')
     openid_from_url = GetQueryString("openid")
 
     if (openid == undefined || openid == null || openid.toString().length == 0 || openid == '') {
@@ -62,18 +73,30 @@ function getConfigData() {
         url: api_url,
         type: "get",
         contentType: 'application/json;charset=utf-8',
-        data: { strQuery: JSON.stringify({ "url": window.top.location.href }) },
+        // data: JSON.stringify({ "url": window.top.location.href }),
+        data: { "url": window.top.location.href },
         dataType: "json",
         success: function (res) {
             c_timestamp = res.timestamp
             c_nonceStr = res.nonceStr
             c_signature = res.signature
+            console.log(res)
+            return res
         }
     })
 }
 
 $(document).ready(function () {
-
+    /*
+    setInterval(function () {
+        var audio = document.querySelector('audio')
+        if (audio.paused) {
+            audio.play().catch(function(error) {
+                alert(error)
+            })
+        }
+    }, 5000)
+    */
 
     var c_timestamp = ""
     var c_nonceStr = ""
@@ -94,9 +117,18 @@ $(document).ready(function () {
     // var icon = "http://www.google.com/s2/favicons?domain=http://www.baidu.com"
     document.getElementsByTagName('link')
 
-
+    getConfigData()
     if (isWXBrowser) {
+
+        getUserKey()
         chkOpenid()
+        getConfigData()
+
+        if (window.top.location.href.indexOf('code') > -1 || (openid !== null && openid.toString().length > 0)) {
+            // do nothing
+        } else {
+            // do something
+        }
 
         //获得JS-SDKj相关信息
         $.get("/wechat/ajax_getconfig/1:Q/", { url: window.location.href }, function (data) {
@@ -207,4 +239,4 @@ $(document).ready(function () {
 
         });
     }
-}
+})
