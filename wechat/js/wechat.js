@@ -1,6 +1,6 @@
 var appID = "wx7fd0be08ea2fc7b6"
 // var api_domain = window.top.location.origin
-var api_domain = "https://www.zhenzhviidaole.com"
+var api_domain = "https://www.zhenzhidaole.com"
 var isWXBrowser = navigator.appVersion.indexOf('MicroMessenger/') > -1 || navigator.userAgent.indexOf('MicroMessenger/') > -1
 
 function trim(str) {
@@ -81,6 +81,7 @@ function getConfigData() {
             c_nonceStr = res.nonceStr
             c_signature = res.signature
             console.log(res)
+            alert(JSON.stringify(res))
             return res
         }
     })
