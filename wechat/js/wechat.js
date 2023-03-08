@@ -146,12 +146,6 @@ $(document).ready(function () {
         chkOpenid()
         getConfigData()
 
-        if (window.top.location.href.indexOf('code') > -1 || (openid !== null && openid.toString().length > 0)) {
-            // do nothing
-        } else {
-            // do something
-        }
-
         //获得JS-SDKj相关信息
         $.get("/wechat/ajax_getconfig/1:Q/", { url: window.location.href }, function (data) {
             // wx.config(data)
