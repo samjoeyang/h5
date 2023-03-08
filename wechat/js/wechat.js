@@ -20,6 +20,14 @@ function trim(str) {
     return whitespace.indexOf(str.charAt(0)) === -1 ? str : '';
 }
 
+function isNone(s) {
+    if (s == undefined || s == null || s.toString().length == 0 || s == '') { 
+        return true
+    } else {
+        return false
+    }
+}
+
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
@@ -50,13 +58,26 @@ function getUserKey() {
 }
 
 function chkOpenid() {
-    openid = window.localStorage.getItem('zhenzhidaole_vieweropenid')
+    try {
+        if (isNone($.cookie("openid"))) {
+            openid = window.localStorage.getItem('openid')
+        } else {
+            openid = $.cookie("openid")
+        }
+    } catch (error) {
+        openid = window.localStorage.getItem('openid')
+    }
     openid_from_url = GetQueryString("openid")
 
-    if (openid == undefined || openid == null || openid.toString().length == 0 || openid == '') {
-        //没有openid,跳转去登陆
+    if (isNone(openid)) {
+        // 没有openid,跳转去登陆
         if (isWXBrowser) {
-            window.location.replace(api_domain + "/wechat/auth/?appid=" + appID + "&scope=snsapi_userinfo&backurl=" + encodeURIComponent(window.top.location.href));
+            if (window.top.location.href.indexOf('code') < 0) {
+                window.location.replace(api_domain + "/wechat/auth/?appid=" + appID + "&scope=snsapi_userinfo&noparams=1&backurl=" + encodeURIComponent(window.top.location.href));
+            } else {
+                window.localStorage.setItem('openid',openid_from_url)
+                window.localStorage.setItem('userInfo',GetQueryString("data"))
+            }
         } else {
             // do nothing
             console.log("not wechat browser")
