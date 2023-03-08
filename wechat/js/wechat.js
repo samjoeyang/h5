@@ -1,4 +1,5 @@
-var appID = "wx7fd0be08ea2fc7b6"
+var wx_appid = "wx7fd0be08ea2fc7b6"
+var wx_scope = "snsapi_userinfo"
 // var api_domain = window.top.location.origin
 var api_domain = "https://www.zhenzhidaole.com"
 var isWXBrowser = navigator.appVersion.indexOf('MicroMessenger/') > -1 || navigator.userAgent.indexOf('MicroMessenger/') > -1
@@ -21,7 +22,7 @@ function trim(str) {
 }
 
 function isNone(s) {
-    if (s == undefined || s == null || s.toString().length == 0 || s == '') { 
+    if (s == undefined || s == null || s.toString().length == 0 || s == '') {
         return true
     } else {
         return false
@@ -58,25 +59,17 @@ function getUserKey() {
 }
 
 function chkOpenid() {
-    try {
-        if (isNone($.cookie("openid"))) {
-            openid = window.localStorage.getItem('openid')
-        } else {
-            openid = $.cookie("openid")
-        }
-    } catch (error) {
-        openid = window.localStorage.getItem('openid')
-    }
+    openid = window.localStorage.getItem('openid')
     openid_from_url = GetQueryString("openid")
 
     if (isNone(openid)) {
         // 没有openid,跳转去登陆
         if (isWXBrowser) {
             if (window.top.location.href.indexOf('openid') < 0) {
-                window.location.replace(api_domain + "/wechat/auth/?appid=" + appID + "&scope=snsapi_userinfo&noparams=1&backurl=" + encodeURIComponent(window.top.location.href));
+                window.location.replace(api_domain + "/wechat/auth/?appid=" + wx_appid + "&scope=" + wx_scope + "&noparams=1&backurl=" + encodeURIComponent(window.top.location.href));
             } else {
-                window.localStorage.setItem('openid',openid_from_url)
-                window.localStorage.setItem('userinfo',GetQueryString("data"))
+                window.localStorage.setItem('openid', openid_from_url)
+                window.localStorage.setItem('userinfo', GetQueryString("data"))
             }
         } else {
             // do nothing
@@ -88,7 +81,7 @@ function chkOpenid() {
 }
 
 function getConfigData() {
-    var api_url = api_domain + "/wechat/config/?appid=" + appID
+    var api_url = api_domain + "/wechat/config/?appid=" + wx_appid
 
     $.ajax({
         url: api_url,
@@ -101,8 +94,7 @@ function getConfigData() {
             c_timestamp = res.timestamp
             c_nonceStr = res.nonceStr
             c_signature = res.signature
-            console.log(res)
-            alert(JSON.stringify(res))
+            // alert(JSON.stringify(res))
             return res
         }
     })
@@ -139,22 +131,20 @@ $(document).ready(function () {
     // var icon = "http://www.google.com/s2/favicons?domain=http://www.baidu.com"
     document.getElementsByTagName('link')
 
-    getConfigData()
     if (isWXBrowser) {
 
         getUserKey()
         chkOpenid()
-        getConfigData()
 
         //获得JS-SDKj相关信息
-        $.get("/wechat/ajax_getconfig/1:Q/", { url: window.location.href }, function (data) {
+        $.get(api_domain + "/wechat/config/?appid=" + wx_appid, { url: window.location.href }, function (res) {
             // wx.config(data)
             wx.config({
                 debug: false,               // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                appId: appID,               // 必填，公众号的唯一标识
-                timestamp: c_timestamp,     // 必填，生成签名的时间戳
-                nonceStr: c_nonceStr,       // 必填，生成签名的随机串
-                signature: c_signature,     // 必填，签名
+                appId: wx_appid,               // 必填，公众号的唯一标识
+                timestamp: res.timestamp,     // 必填，生成签名的时间戳
+                nonceStr: res.nonceStr,       // 必填，生成签名的随机串
+                signature: res.signature,     // 必填，签名
                 jsApiList: [                // 必填，需要使用的JS接口列表
                     'checkJsApi',
                     'updateAppMessageShareData',
