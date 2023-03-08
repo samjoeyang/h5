@@ -72,11 +72,11 @@ function chkOpenid() {
     if (isNone(openid)) {
         // 没有openid,跳转去登陆
         if (isWXBrowser) {
-            if (window.top.location.href.indexOf('code') < 0) {
+            if (window.top.location.href.indexOf('openid') < 0) {
                 window.location.replace(api_domain + "/wechat/auth/?appid=" + appID + "&scope=snsapi_userinfo&noparams=1&backurl=" + encodeURIComponent(window.top.location.href));
             } else {
                 window.localStorage.setItem('openid',openid_from_url)
-                window.localStorage.setItem('userInfo',GetQueryString("data"))
+                window.localStorage.setItem('userinfo',GetQueryString("data"))
             }
         } else {
             // do nothing
